@@ -12,22 +12,20 @@ import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-recipes-list',
-  standalone: true,
-  imports: [CommonModule,
-    DataViewModule,
-    PanelModule,
-    DialogModule,
-    DropdownModule,
-    InputTextModule,
-    ButtonModule,
-    RippleModule,
-    RatingModule, FormsModule
-  ],
-  templateUrl: './recipes-list.component.html',
-  styleUrls: ['./recipes-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
-
+    selector: 'app-recipes-list',
+    imports: [CommonModule,
+        DataViewModule,
+        PanelModule,
+        DialogModule,
+        DropdownModule,
+        InputTextModule,
+        ButtonModule,
+        RippleModule,
+        RatingModule, FormsModule
+    ],
+    templateUrl: './recipes-list.component.html',
+    styleUrls: ['./recipes-list.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RecipesListComponent {
   recipes$ = this.service.recipes$;
