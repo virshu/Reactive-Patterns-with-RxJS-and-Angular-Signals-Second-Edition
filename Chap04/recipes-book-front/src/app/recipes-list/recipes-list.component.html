@@ -1,7 +1,7 @@
 @if (recipes$ |async; as recipes) {
 <div class="card">
     <div>{{recipes.length}} Results</div>
-    <p-dataView #dv [value]="recipes" [paginator]="true" [rows]="9" filterBy="name" layout="grid">
+    <p-dataView #dv [value]="recipes" [paginator]="true" [rows]="9" filterBy="name">
         <ng-template let-recipes pTemplate="gridItem">
             <div class="grid grid-nogutter">
                 @for (recipe of recipes; track recipe) {
@@ -16,7 +16,7 @@
                         <img class="recipe-image" [src]="'assets/recipes/'+ recipe.imageUrl" [alt]="recipe.title" />
                         <div class="recipe-name">{{recipe?.title}}</div>
                         <div class="recipe-description">{{recipe?.title}}</div>
-                        <p-rating class="recipe-rating" [ngModel]="recipe.rating" [readonly]="true" [cancel]="false">
+                        <p-rating class="recipe-rating" [ngModel]="recipe.rating" [readonly]="true">
                         </p-rating>
                     </div>
                     <div class="recipe-grid-item-bottom">
