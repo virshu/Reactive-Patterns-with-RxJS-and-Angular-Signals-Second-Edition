@@ -1,10 +1,10 @@
 <div class="card">
-    @if (recipes$ |async; as recipes) {
+    @if (filteredRecipes$ |async; as recipes) {
         <div>{{recipes.length}} Results</div>
     <p-dataView #dv [value]="recipes" [paginator]="true" [rows]="9" filterBy="name" emptyMessage="bummer">
         <ng-template #list let-recipes pTemplate="gridItem">
             <div class="grid grid-nogutter">
-                @for (recipe of recipes; track recipe.id) {
+                @for (recipe of recipes; track recipe) {
                 <div class="col-12" style="cursor: pointer;" class="recipe-grid-item card">
                     <div class="recipe-grid-item-top">
                         <div>
