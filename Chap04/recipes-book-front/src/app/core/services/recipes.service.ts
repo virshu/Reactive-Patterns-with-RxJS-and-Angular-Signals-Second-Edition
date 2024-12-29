@@ -3,8 +3,7 @@ import { Injectable } from '@angular/core';
 import { Recipe } from '../model/recipe.model';
 import { environment } from 'src/environments/environment';
 import { catchError, of } from 'rxjs';
-const BASE_PATH = environment.basePath
-
+const BASE_PATH = environment.basePath;
 
 @Injectable({
   providedIn: 'root'
