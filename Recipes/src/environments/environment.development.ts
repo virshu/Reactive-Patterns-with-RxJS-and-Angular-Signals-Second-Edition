@@ -1,3 +1,3 @@
 export const environment = {
-    basePath: '/api'
+    basePath: 'https://localhost:7248/api'
 };
