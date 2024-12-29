@@ -20,10 +20,10 @@
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
-    "useDefineForClassFields": false,
+    /* "useDefineForClassFields": false, */
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": false
+    "strictTemplates": true
 
   }
 }
