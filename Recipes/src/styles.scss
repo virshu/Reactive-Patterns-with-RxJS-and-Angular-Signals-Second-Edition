@@ -1,10 +1,10 @@
 body {
-  margin: 0  !important;
+  margin: 0 !important;
   font-family: -apple-system, BlinkMacSystemFont, âSegoe UIâ, Roboto, Helvetica, Arial, sans-serif, âApple Color Emojiâ, âSegoe UI Emojiâ, âSegoe UI Symbolâ;
-  }
+}
 
 .recipe-rating .p-rating .p-rating-icon.pi-star {
-    color: #f71e68;
+  color: #f71e68;
 }
 
 .recipe-favourite .p-button {
@@ -65,14 +65,14 @@ a {
   height: 39.6px;
 }
 
-.rp-data-view  {
+.rp-data-view {
   min-width: 25%;
   padding: 2rem;
 }
 
 .rp-filters {
   padding: 40px;
-  left:32px;
+  left: 32px;
 }
 
 .row {
@@ -89,8 +89,9 @@ a {
   // padding-top: 50px;
 }
 
-.rp-filter-button button.p-button, .rp-filter-button  .p-button:enabled:active {
-  background:  #f71e68;
+.rp-filter-button button.p-button,
+.rp-filter-button .p-button:enabled:active {
+  background: #f71e68;
   border-color: #f71e68;
   padding: 2.5px !important;
   float: right;
@@ -98,9 +99,111 @@ a {
 }
 
 .rp-filter-button {
-height: 50px;
+  height: 50px;
 }
 
 input {
   margin-bottom: 25px;
+}
+
+
+app-recipe-creation form {
+  padding: 0px 25px 2px 25px;
+  margin-left: 210px;
+  width: 1000px;
+  border: 1px solid lightgray;
+}
+
+
+.column {
+  float: left;
+  width: 33%;
+}
+
+
+.column-middle {
+  float: left;
+  width: 50%;
+
+}
+
+.column-full {
+  float: left;
+  width: 100%;
+
+}
+
+app-recipe-creation input,
+app-recipe-creation label {
+  display: block;
+  width: 100%;
+}
+
+textarea {
+  width: 100%
+}
+
+.recipe-tag {
+  display: initial;
+  padding-left: 10px;
+}
+
+h1 {
+  margin-left: 210px !important;
+  font-size: 1.5rem !important;
+  ;
+  margin-top: 10px !important;
+
+
+}
+
+.right-actions-panel {
+  margin-left: 1050px;
+  margin-top: 4px;
+}
+
+.recipe-button button.p-button,
+.recipe-button .p-button:enabled:active {
+  background: #f71e68 !important;
+  border-color: #f71e68 !important;
+  margin: 5px !important;
+}
+
+right-zone {
+  float: right;
+  vertical-align: middle;
+  padding: 15px;
+}
+
+.left-zone {
+  float: left;
+  vertical-align: middle;
+  padding: 15px;
+}
+
+
+.header-menu-item button.p-button {
+  background: transparent !important;
+  border: 1px solid transparent !important;
+}
+
+app-tags-list {
+  p-button.tag-button {
+    margin: 3px;
+  }
+
+  p-button button {
+    background: #fff !important;
+    border-color: #f71e68 !important;
+    color: #f71e68 !important;
+    // background: #f71e6891 !important;
+    // border-color: #f71e6891 !important;
+    padding: 0.1rem 0.8rem;
+  }
+
+  p-button.clicked button{
+    background: #f71e68  !important;
+    border-color: #f71e68 !important;
+    color: #fff !important;
+  }
 }
