@@ -245,5 +245,11 @@ namespace RecipesServer.Controllers
         {
             return recipes;
         }
+
+        [HttpPost]
+        public IActionResult AddRecipe(Recipe recipe)
+        {
+            return CreatedAtRoute("GetRecipes", new { id = recipe.Id }, recipe);
+        }
     }
 }

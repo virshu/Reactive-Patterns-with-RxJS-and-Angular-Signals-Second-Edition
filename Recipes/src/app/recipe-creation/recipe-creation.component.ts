@@ -7,6 +7,7 @@ import * as recipeTags from '../core/model/tag';
 import { RecipesService } from '../core/services/recipes.service';
 import { Recipe } from '../core/model/recipe';
 import { AsyncPipe } from '@angular/common';
+import { catchError, concatMap, of, tap } from 'rxjs';
 
 @Component({
   selector: 'app-recipe-creation',
@@ -38,7 +39,15 @@ export class RecipeCreationComponent {
       steps: '',
     });
 
-    this.valueChanges$ = this.recipeForm.valueChanges.pipe();
+    this.valueChanges$ = this.recipeForm.valueChanges.pipe(
+      concatMap((recipe: Recipe) => this.service.createRecipe(recipe)),
+      catchError(errors => of(errors)),
+      tap(result => this.saveSuccess(result))
+    );    
    }
+
+  saveSuccess(result: unknown): void {
+    console.log('Save success', result);
+  }
 
 }
