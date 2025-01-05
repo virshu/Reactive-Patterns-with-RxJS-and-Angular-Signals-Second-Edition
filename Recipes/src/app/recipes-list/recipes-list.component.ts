@@ -7,6 +7,8 @@ import { AsyncPipe } from '@angular/common';
 import { combineLatest, map, Observable } from 'rxjs';
 import { Recipe } from '../core/model/recipe';
 import { FormsModule } from '@angular/forms';
+import { SharedDataService } from '../core/services/shared-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipes-list',
@@ -25,7 +27,7 @@ export class RecipesListComponent {
     filterRecipesAction$: Observable<Recipe>;
     filteredRecipes$: Observable<Recipe[]>;
   
-    constructor(private service: RecipesService) { 
+    constructor(private service: RecipesService, private sharedService: SharedDataService, private router: Router) { 
       this.recipes$ = this.service.recipes$;
       this.filterRecipesAction$ = this.service.filterRecipesAction$;
 
@@ -35,6 +37,11 @@ export class RecipesListComponent {
           return recipes.filter(recipe => recipe.title?.toLowerCase().includes(filterTitle));
         })
       );
+    }
+
+    editRecipe(recipe: Recipe) {
+      this.sharedService.updateSelectedRecipe(recipe);
+      this.router.navigate(['/recipes/details']);
     }
 
 }
